@@ -1,0 +1,16 @@
+version: '3'
+
+volumes:
+  db_1:
+
+services:
+  sqlserver:
+    image: "mcr.microsoft.com/mssql/server:2019-latest"
+    environment:
+      ACCEPT_EULA : "Y"
+      SA_PASSWORD: "!P@ssw0rd"
+      MSSQL_PID: "Express"
+    ports:
+      - "1433:1433"
+    volumes:
+      - db_1:/var/opt/mssql      

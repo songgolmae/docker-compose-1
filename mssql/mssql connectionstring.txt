@@ -1,0 +1,1 @@
+"DefaultConnection": "Server=.;Database=aspnetcoredb;User=sa;Password=!P@ssw0rd;Encrypt=false;Persist Security Info=True;"

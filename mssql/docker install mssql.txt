@@ -1,0 +1,9 @@
+install azure data studio 
+
+docker pull mcr.microsoft.com/mssql/server:2022-latest
+
+docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=!P@ssw0rd" -p 1433:1433 -d --name mssqlserver mcr.microsoft.com/mssql/server:2022-latest
+
+docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=!P@ssw0rd" -p 1433:1433 -v ./SqlData:/var/opt/mssql/data -d --name mssqlserver mcr.microsoft.com/mssql/server:2022-latest
+
+docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=!P@ssw0rd" -p 1433:1433 -d --name sqlserver mcr.microsoft.com/mssql/server:2022-latest -v "D:/Docker/DockerVolumes/SqlData/data:/var/opt/mssql/data" -v "D:/Docker/DockerVolumes/SqlData/log:/var/opt/mssql/log" -v "D:/Docker/DockerVolumes/SqlData/secrets:/var/opt/mssql/secrets" -d --name mssqlserver mcr.microsoft.com/mssql/server:2022-latest 
